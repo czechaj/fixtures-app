@@ -1,4 +1,4 @@
-# Fixtures App
+# [Fixtures App](https://fixtures-app.herokuapp.com/)
 
 &nbsp;&nbsp;&nbsp;&nbsp;This is a basic e-commerce app for a furnitures company called Fixtures. I used a template from [HTMLDesign](https://html.design/), template can be downloaded from [this link](https://html.design/download/fixtures-furniture-html-template/).  
 <br>
@@ -15,7 +15,7 @@
  &nbsp;&nbsp; 
  &nbsp;&nbsp;  
  &nbsp;&nbsp; 
- 
+
 
 ![client](client_gif.gif)
 
