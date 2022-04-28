@@ -35,7 +35,7 @@ app.use(
 );
 app.use(
   session({
-    secret: "scmalkmkmdls838bshjabd7",
+    secret: `${process.env.SESSION_SECRET}`,
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
