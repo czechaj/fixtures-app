@@ -1,0 +1,29 @@
+<%- include('./partials/_header') %> <%- include('./partials/_nav') %>
+
+<!-- header section end -->
+<!-- furnitures section start -->
+<div class="furnitures_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="furnitures_taital">Categories</h1>
+      </div>
+    </div>
+    <div class="furnitures_section_2">
+      <div class="row">
+        <% for(let i = 0; i < categories.length; i++ ){ %>
+        <div class="col-md-4">
+          <a href="/furnitures/<%= categories[i]._id %>">
+            <div class="hover01 column">
+              <figure><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" style="height: 150px; width: 100%;" /></figure>
+            </div>
+            <h3 class="introduction_text"><%= categories[i].name %>></h3> </a>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- furnitures section end -->
+<!-- footer section start -->
+<%- include('./partials/_footer') %>

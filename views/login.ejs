@@ -1,0 +1,58 @@
+<%- include('./partials/_header') %> <%- include('./partials/_nav') %>
+
+<div class="contact_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 mx-auto">
+        <h1 class="contact_taital contact_heading">Log in</h1>
+      </div>
+    </div>
+    <div class="contact_section_2">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mail_section map_form_container">
+            <span>
+              <% if(flashMessages){ %> <% if(flashMessages.success){ %>
+              <div class="alert-sm alert-success mb-3">
+                <%= flashMessages.success %>
+              </div>
+              <% } else if(flashMessages.err){ %>
+              <div class="alert alert-danger mb-3">
+                <%= flashMessages.err %>
+              </div>
+              <% } %> <% } %>
+            </span>
+            <form action="/users/login" method="post">
+              <input
+                type="e-mail"
+                class="mail_text"
+                placeholder="e-mail"
+                name="email"
+              />
+              <input
+                type="password"
+                class="mail_text"
+                placeholder="password"
+                name="password"
+              />
+              <div class="col-sm-6 mx-auto">
+                <a class=""
+                  ><button type="submit" class="btn btn-warning btn-lg mt-5">
+                    Login
+                  </button>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm-6 mx-auto">
+        <a href="/signup" class="">Don't have an account yet? Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/_footer') %>
