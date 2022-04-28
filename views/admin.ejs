@@ -60,7 +60,7 @@
                         <div class="alert-sm alert-success mb-3">
                             <%= flashMessages.success %>
                         </div>
-                        <% } %>                           
+                        <% } %>
                             <div class="row ">
                                 <div class="mt-3 mb-3">
                                     <span class="display-4">Categories </span>
@@ -96,83 +96,86 @@
                                     </button>
                                 </div>
 
+                                <div class="row">
+                                    <% if(pages> 0){ %>
+                                        <nav class=" mt-2">
+                                            <ul class="pagination justify-content-center">
+                                                <% for(let i=0; i < pages; i++ ){ %>
+                                                    <li class="page-item <%= current == i+1 && 'active' %> "><a
+                                                            class="page-link" href="/admin?page=<%= i + 1 %>">
+                                                            <%= i + 1 %>
+                                                        </a></li>
+                                                    <% } %>
+                                            </ul>
+                                        </nav>
+                                        <% } %>
+                                            <div class="container d-flex">
 
-
-                                <% for(let i=0; i < furnitures.length; i++){ %>
-                                    <div class="col-sm-4">
-                                        <div class="card mt-4" style="width: 25rem;">
-                                            <img src="<%= furnitures[i].image  %>" class="card-img-top"
-                                                style="height: 310px; ">
-                                            <div class="card-body" style="height:200px">
-                                                <h5 class="card-title">
-                                                    <%= furnitures[i].name.substring(0,150) %>
-                                                </h5>
-                                                <p class="card-text">
-                                                    <%= furnitures[i].price %>
-                                                </p>
-                                                <p class="card-text">
-                                                    <strong>category:</strong>
-                                                    <%= furnitures[i].category[0].name %>
-                                                </p>
-                                                <button href="" class="btn btn-dark" data-bs-toggle="modal"
-                                                    data-bs-target="#editFurniture<%= i %> ">Edit</button>
-                                                <a href="/furnitures/drop/<%= furnitures[i]._id %>?_method=DELETE"><button
-                                                        class="btn btn-danger">Drop</button></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-
-                                        <% if(pages> 0){ %>
-                                            <nav class="mb-5 mt-2">
-                                                <ul class="pagination justify-content-center">
-                                                    <% for(let i=0; i < pages; i++ ){ %>
-                                                        <li class="page-item <%= current == i+1 && 'active' %> "><a
-                                                                class="page-link" href="/admin?page=<%= i + 1 %>">
-                                                                <%= i + 1 %>
-                                                            </a></li>
-                                                        <% } %>
-                                                </ul>
-                                            </nav>
-                                            <% } %>
-
-
-                                                <div class="mb-5">
-                                                    <div class="mt-3 mb-3">
-                                                        <span class="display-4">Users </span>
+                                                <% for(let i=0; i < furnitures.length; i++){ %>
+                                                    <div class="card col-sm-4 mt-4">
+                                                        <img src="<%= furnitures[i].image  %>" class="card-img-top"
+                                                            style="height: 310px; ">
+                                                        <div class="card-body" style="height:200px">
+                                                            <h5 class="card-title">
+                                                                <%= furnitures[i].name.substring(0,150) %>
+                                                            </h5>
+                                                            <p class="card-text">
+                                                                <%= furnitures[i].price %>
+                                                            </p>
+                                                            <p class="card-text">
+                                                                <strong>category:</strong>
+                                                                <%= furnitures[i].category[0].name %>
+                                                            </p>
+                                                            <button href="" class="btn btn-dark" data-bs-toggle="modal"
+                                                                data-bs-target="#editFurniture<%= i %> ">Edit</button>
+                                                            <a
+                                                                href="/furnitures/drop/<%= furnitures[i]._id %>?_method=DELETE"><button
+                                                                    class="btn btn-danger">Drop</button></a>
+                                                        </div>
                                                     </div>
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Name</th>
-                                                                <th scope="col">E-mail</th>
-                                                                <th scope="col">Reserved</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <% for(let i=0; i < users.length; i++){ %>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <%= i+1 %>
-                                                                    </th>
-                                                                    <td>
-                                                                        <%= users[i].name %>
-                                                                    </td>
-                                                                    <td>
-                                                                        <%= users[i].email %>
-                                                                    </td>
-                                                                    <% if(users[i].reserved[0]){ %>
-                                                                        <td>
-                                                                            <%= users[i].reserved.length %>
-                                                                        </td>
-                                                                        <% } %>
-                                                                </tr>
-                                                                <% } %>
+                                                    <% } %>
+                                            </div>
+                                </div>
+                                <div class="" style="height: 70px;"></div>
 
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+
+
+                                <div class="mb-5">
+                                    <div class="mt-3 mb-3">
+                                        <span class="display-4">Users </span>
+                                    </div>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">E-mail</th>
+                                                <th scope="col">Reserved</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <% for(let i=0; i < users.length; i++){ %>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <%= i+1 %>
+                                                    </th>
+                                                    <td>
+                                                        <%= users[i].name %>
+                                                    </td>
+                                                    <td>
+                                                        <%= users[i].email %>
+                                                    </td>
+                                                    <% if(users[i].reserved[0]){ %>
+                                                        <td>
+                                                            <%= users[i].reserved.length %>
+                                                        </td>
+                                                        <% } %>
+                                                </tr>
+                                                <% } %>
+
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                 </div>
             </div>

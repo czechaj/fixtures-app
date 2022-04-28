@@ -16,7 +16,8 @@ app = express();
 app.set("view engine", "ejs");
 
 // connecting db
-mongoose.connect(`mongodb+srv://czechaj:${process.env.DB_KEY}@cluster0.q16jy.mongodb.net/fixtures-app?retryWrites=true&w=majority`, () => {
+mongoose.connect(`mongodb+srv://czechaj:${process.env.DB_KEY}@cluster0.q16jy.mongodb.net/fixtures-app?retryWrites=true&w=majority
+`, () => {
   console.log("db connected");
 });
 
