@@ -42,7 +42,9 @@ exports.getFurnituresPage = async (req, res) => {
   });
 };
 exports.getLoginPage = async (req, res) => {
+  const user = await User.findOne({ _id: req.session.userId });
   res.render("login", {
+    user,
     page_name: "login",
   });
 };
